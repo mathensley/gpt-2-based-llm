@@ -33,7 +33,7 @@ def calc_loss_loader(data_loader, model, device, num_batches=None):
         else:
             break
 
-    return total_loss
+    return total_loss / num_batches
 
 
 def evaluate_model(model, train_loader, val_loader, device, eval_iter):

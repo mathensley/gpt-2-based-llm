@@ -67,7 +67,7 @@ class MultiHeadAttention(torch.nn.Module):
         )
 
     def forward(self, x):
-        batch, num_tokens, d_in = x.shape
+        batch, num_tokens, _ = x.shape
         queries = self.wq(x)
         keys = self.wk(x)
         values = self.wv(x)
