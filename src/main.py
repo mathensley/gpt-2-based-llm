@@ -13,6 +13,8 @@ torch.manual_seed(40)
 device = torch.device("cuda") if torch.cuda.is_available() else torch.device("cpu")
 print(f"Usando dispositivo: {device.type}")
 
+print(TOKENIZER.n_vocab)
+
 
 CONFIG = {
     "vocab_size": TOKENIZER.n_vocab,
@@ -42,16 +44,16 @@ CONFIG = {
     "file_name": "mini_mlp.pth"
 }
 
-train_loader, test_loader, val_loader = get_loaders(
-    data_path="data/processed",
-    tokenizer=TOKENIZER,
-    max_length=CONFIG["context_length"],
-    batch_sz=CONFIG["batch_size"],
-    num_workers=CONFIG["num_workers"],
-    stride=CONFIG["stride"]
-)
+# train_loader, test_loader, val_loader = get_loaders(
+#     data_path="data/processed",
+#     tokenizer=TOKENIZER,
+#     max_length=CONFIG["context_length"],
+#     batch_sz=CONFIG["batch_size"],
+#     num_workers=CONFIG["num_workers"],
+#     stride=CONFIG["stride"]
+# )
 
-print(f"Tamanho do conjunto de treinamento: {len(train_loader)}\nTamanho do conjunto de teste: {len(test_loader)}\nTamanho do conjunto de validação: {len(val_loader)}")
+# print(f"Tamanho do conjunto de treinamento: {len(train_loader)}\nTamanho do conjunto de teste: {len(test_loader)}\nTamanho do conjunto de validação: {len(val_loader)}")
 
 
 # model = GPT2ModelOriginal(CONFIG, device).to(device=device)

@@ -1,6 +1,7 @@
 import torch, tiktoken
 
-TOKENIZER = tiktoken.get_encoding("o200k_base")
+#TOKENIZER = tiktoken.get_encoding("o200k_base")
+TOKENIZER = tiktoken.get_encoding("gpt2")
 
 def text_to_token_ids(text, tokenizer, device):
     encoded = tokenizer.encode(text, allowed_special={'<|endoftext|>'})
