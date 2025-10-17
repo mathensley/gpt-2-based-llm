@@ -100,7 +100,6 @@ class TransformerBlock(torch.nn.Module):
     def __init__(self, context_length, dim_in, dim_out, num_heads, bias=False):
         super().__init__()
 
-        # Usando a classe do Multi-Head Attention criada
         self.multi_head_attention = MultiHeadAttention(
             dim_in=dim_in,
             dim_out=dim_out,
@@ -109,7 +108,6 @@ class TransformerBlock(torch.nn.Module):
             bias=bias
         )
 
-        # Usando a classe do FeedForward criada
         self.feed_forward = FeedForward(
             embedding_dim=dim_in,
             bias=bias
@@ -178,7 +176,7 @@ class GPT2ModelOriginal(torch.nn.Module):
 
 
     def forward(self, x):
-        batch_size, context_length = x.shape
+        _, context_length = x.shape
         tok_emb = self.embeddings(x)
         pos_emb = self.pos_embeddings(
             torch.arange(context_length, device=self.device)
