@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 Os experimentos foram realizados no Kaggle, utilizando uma GPU NVIDIA P100.
 
-Notebook público: [Kaggle — GPT-2 Based LLM Run](https://www.kaggle.com/code/matheushensley/gpt-2-based-llm-run)
+Notebook público: [Kaggle — GPT-2 Based LLM Run](./results/gpt-2-based-llm-run.ipynb)
 
 Para baixar e preparar os dados:
 
